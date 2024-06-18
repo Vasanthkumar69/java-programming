@@ -1,0 +1,32 @@
+public class PrimeFinder {
+    private int n;
+
+    public PrimeFinder(int n) {
+        this.n = n;
+    }
+
+    public boolean isPrime(int num) {
+        if (num <= 1) return false;
+        for (int i = 2; i * i <= num; i++) {
+            if (num % i == 0) return false;
+        }
+        return true;
+    }
+
+    public int findPrimeAfterNth() {
+        int count = 0, num = 2;
+        while (true) {
+            if (isPrime(num)) {
+                count++;
+                if (count == n + 1) return num;
+            }
+            num++;
+        }
+    }8
+
+    public static void main(String[] args) {
+        PrimeFinder primeFinder = new PrimeFinder(5); // Create an object with n = 5
+        int primeAfterNth = primeFinder.findPrimeAfterNth();
+        System.out.println("The prime number after the " + primeFinder.n + "th prime is: " + primeAfterNth);
+    }
+}

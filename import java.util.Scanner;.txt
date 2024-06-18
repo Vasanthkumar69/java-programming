@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class NumberSequence {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter an integer: ");
+        int n = scanner.nextInt();
+
+        int nn = n * 10 + n;
+        int nnn = nn * 10 + n;
+
+        System.out.println("n = " + n);
+        System.out.println("nn = " + nn);
+        System.out.println("nnn = " + nnn);
+    }
+}
