@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class Main {
+    public int lengthOfLastWord(String s) {
+        int length = 0;
+        int n = s.length();
+
+        // Start from the end of the string
+        int i = n - 1;
+
+        // Skip trailing spaces
+        while (i >= 0 && s.charAt(i) == ' ') {
+            i--;
+        }
+
+        // Count the length of the last word
+        while (i >= 0 && s.charAt(i) != ' ') {
+            length++;
+            i--;
+        }
+
+        return length;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a string:");
+        String input = scanner.nextLine();
+
+        Main solution = new Main();
+        int result = solution.lengthOfLastWord(input);
+
+        System.out.println("The length of the last word is: " + result);
+    }
+}
