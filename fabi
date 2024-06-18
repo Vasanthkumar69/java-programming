@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner reader = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int num = reader.nextInt();
+     int a=0,b=1,febi=0;
+     System.out.println("0\n1");
+             for (int i=2;i<num;i++)
+             {
+                 febi = a+b;
+                 System.out.println(febi);
+                 a=b;
+                 b=febi;
+             }
+
+    }
+}
